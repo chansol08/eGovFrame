@@ -13,7 +13,7 @@ public class HelloStart extends HttpServlet {
 
     //1.클라이언트 요청을 받는 작업 => controller(servlet)
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp)
+    protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         //2.처리 작업 => model(java class)
@@ -24,7 +24,7 @@ public class HelloStart extends HttpServlet {
         }
 
         //3.응답 작업 => view(jsp)
-        PrintWriter out = resp.getWriter();
+        PrintWriter out = response.getWriter();
         out.println("<html>");
         out.println("<body>");
         out.println(sum);

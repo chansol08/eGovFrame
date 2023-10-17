@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--  start bootstrap3 info  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--  end bootstrap3 info  -->
+
+    <title>practice servlet</title>
+</head>
+<body>
+    <form action="calc.do" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <td>number1</td>
+                <td><input type="text" name="number1" /></td>
+            </tr>
+            <tr>
+                <td>number2</td>
+                <td><input type="text" name="number2" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input class="btn btn-primary" type="submit" value="전송" />
+                    <input class="btn btn-warning" type="reset" value="취소" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+<!--
+form method="get"
+http://localhost:8080/calc.do?number1=&number2=
+?number1=&number2= <= queryString
+
+form method="post"
+http://localhost:8080/calc.do
+-->
