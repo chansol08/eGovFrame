@@ -6,7 +6,8 @@ create table member(
     name varchar(30) not null,
     age int not null,
     email varchar(30) not null,
-    phone varchar(30) not null
+    phone varchar(30) not null,
+    unique key(id)
 );
 
 # drop table
@@ -23,4 +24,4 @@ select * from member;
 update member set age=45, phone='010-1111-0000' where id='admin';
 
 # delete
-delete from member where id='admin';
+delete from member where id like 'test%';

@@ -1,4 +1,4 @@
-package kr.bit.controller;
+package kr.bit.practice.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
