@@ -30,8 +30,17 @@ public class MemberListController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8"); //MINE TYPE
         PrintWriter out = response.getWriter();
         out.println("<html>");
+
+        out.println("<head>");
+        out.println("<meta charset='UTF-8>");
+        out.println("<meta name='viewport' content='width=device-width, initial-scale=1'>");
+        out.println("<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>");
+        out.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>");
+        out.println("<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>");
+        out.println("</head>");
+
         out.println("<body>");
-        out.println("<table border='1'>");
+        out.println("<table class='table table-bordered'>");
         out.println("<thead>");
         out.println("<tr>");
         out.println("<th>번호</th>");
@@ -41,6 +50,7 @@ public class MemberListController extends HttpServlet {
         out.println("<th>나이</th>");
         out.println("<th>이메일</th>");
         out.println("<th>전화번호</th>");
+        out.println("<th></th>");
         out.println("</tr>");
         out.println("</thead>");
         out.println("<tbody>");
@@ -48,18 +58,19 @@ public class MemberListController extends HttpServlet {
         for (MemberVO member : members) {
             out.println("<tr>");
             out.println("<td>" + member.getNumber() + "</td>");
-            out.println("<td>" + member.getId() + "</td>");
+            out.println("<td><a href='/memberContent.do?number=" + member.getNumber() + "'>" + member.getId() + "</a></td>");
             out.println("<td>" + member.getPassword() + "</td>");
             out.println("<td>" + member.getName() + "</td>");
             out.println("<td>" + member.getAge() + "</td>");
             out.println("<td>" + member.getEmail() + "</td>");
             out.println("<td>" + member.getPhone() + "</td>");
+            out.println("<th><a href='/memberDelete.do?number=" + member.getNumber() + "'>삭제</a></th>");
             out.println("</tr>");
         }
 
         out.println("</tbody>");
         out.println("<tr>");
-        out.println("<td colspan='7' align='right'>");
+        out.println("<td colspan='8' align='right'>");
         out.println("<a href='member/memberRegister.html'>등록</a>");
         out.println("</td>");
         out.println("</tr>");
